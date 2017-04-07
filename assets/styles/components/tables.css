@@ -1,0 +1,22 @@
+table {
+    width: 100%;
+    font-feature-settings: 'tnum';
+}
+
+thead {
+    font-weight: var(--t--weight-bold);
+    text-align: left;
+}
+
+td,
+th {
+    padding: 0.25rem;
+}
+
+td {
+    border-top: 1px solid var(--c--gray-lighter);
+}
+
+th {
+    border-bottom: 2px solid var(--c--gray-lighter);
+}

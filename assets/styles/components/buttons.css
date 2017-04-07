@@ -1,0 +1,45 @@
+.button {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    color: var(--c--black);
+    background: var(--c--gray-lighter);
+    border-radius: var(--l--border-radius);
+
+    &:hover {
+        cursor: pointer;
+        background: color(var(--c--gray-lighter) lightness(+ 2.5%));
+        text-decoration: none;
+    }
+
+    & + .button {
+        margin-left: 1em;
+    }
+}
+
+.button--primary {
+    color: var(--c--white);
+    background: var(--c--blue);
+
+    &:hover {
+        background: color(var(--c--blue) lightness(+ 2.5%));
+    }
+}
+
+.button--warning {
+    color: var(--c--white);
+    background: var(--c--red);
+
+    &:hover {
+        background: color(var(--c--red) lightness(+ 2.5%));
+    }
+}
+
+.button--action {
+    color: var(--c--white);
+    background: var(--c--green);
+
+    &:hover {
+        background: color(var(--c--green) lightness(+ 2.5%));
+    }
+}
