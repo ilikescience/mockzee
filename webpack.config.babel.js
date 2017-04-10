@@ -11,7 +11,7 @@ const CopyPlugin = require('copy-webpack-plugin');
 const ReloadPlugin = require('reload-html-webpack-plugin');
 const WebpackMD5Hash = require('webpack-md5-hash');
 
-const {getIfUtils, removeEmpty, propIf} = require('webpack-config-utils');
+const { getIfUtils, removeEmpty, propIf } = require('webpack-config-utils');
 
 // Loads an HtmlWebpackPlugin for each template in the assets/views directory
 const loadHtmlPlugin = (src, base = '') => {
@@ -20,7 +20,7 @@ const loadHtmlPlugin = (src, base = '') => {
     return files.map((file) => {
         const ext = path.extname(file);
 
-        if(ext === '.pug') {
+        if (ext === '.pug') {
             const name = path.basename(file, ext);
 
             return new HtmlWebpackPlugin({
@@ -32,7 +32,7 @@ const loadHtmlPlugin = (src, base = '') => {
 };
 
 module.exports = (env) => {
-    const {ifProd, ifNotProd} = getIfUtils(env);
+    const { ifProd, ifNotProd } = getIfUtils(env);
     const isBuild = Boolean(env.build);
     const withDocs = Boolean(env.docs);
 
@@ -41,7 +41,7 @@ module.exports = (env) => {
             './assets/scripts/index.js'
         ],
         output: {
-            filename: ifProd('scripts/bundle-[chunkhash:8].js', 'scripts/bundle.js'),
+            filename: ifProd('assets/scripts/bundle-[chunkhash:8].js', 'scripts/bundle.js'),
             path: path.resolve('build'),
             pathinfo: ifNotProd(),
             publicPath: process.env.PUBLIC_PATH || '/'
@@ -52,8 +52,7 @@ module.exports = (env) => {
             historyApiFallback: ifNotProd()
         },
         module: {
-            rules: [
-                {
+            rules: [{
                     test: /\.css$/,
                     loader: ifProd(
                         ExtractTextPlugin.extract({
@@ -117,18 +116,15 @@ module.exports = (env) => {
                     ]
                 }
             }),
-            ifProd(new ExtractTextPlugin('styles/styles-[chunkhash:8].css')),
+            ifProd(new ExtractTextPlugin('assets/styles/styles-[chunkhash:8].css')),
             ifProd(new PurifyPlugin({
                 basePath: __dirname,
-                paths: propIf(env.docs || false,
-                    [
-                        'assets/templates/**/*.pug',
-                        'docs/**/*.pug'
-                    ],
-                    [
-                        'assets/templates/**/*.pug'
-                    ]
-                ),
+                paths: propIf(env.docs || false, [
+                    'assets/templates/**/*.pug',
+                    'docs/**/*.pug'
+                ], [
+                    'assets/templates/**/*.pug'
+                ]),
                 purifyOptions: {
                     minify: true
                 }
@@ -151,9 +147,9 @@ module.exports = (env) => {
             ...ifNotProd(loadHtmlPlugin('./docs', 'docs/'), []),
             new CopyPlugin(removeEmpty([
                 // Copy fonts to build directory
-                {from: 'fonts', to: 'fonts'},
-                {from: 'favicons', to: '../build'},
-                ifNotProd({from: 'images', to: 'images'})
+                { from: 'fonts', to: 'fonts' },
+                { from: 'favicons', to: '../build' },
+                ifNotProd({ from: 'images', to: 'images' })
             ]), {
                 ignore: [
                     '.*'
