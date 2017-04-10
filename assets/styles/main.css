@@ -25,6 +25,8 @@ Bootstrap kit v1.1 - August 14 2016
 @import 'components/buttons';
 @import 'components/tables';
 @import 'components/tooltip';
+@import 'components/device';
+@import 'components/dropdown';
 
 /* page layouts - styles groups of components */
 @import 'layouts/global';

@@ -4,4 +4,25 @@ block title
     | Homepage - Airframe
 
 block content
-    h1 Hello World!
+    .container
+        header
+            .header--logo
+            .dropdown
+                <svg class="dropdown--icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 86 86"><path d="M37 0l-3 10.438c-2.715.748-5.26 1.824-7.656 3.187l-9.5-5.28-8.5 8.5 5.28 9.5c-1.362 2.394-2.438 4.94-3.187 7.655L0 37v12l10.437 3c.75 2.715 1.825 5.26 3.188 7.656l-5.28 9.5 8.5 8.5 9.5-5.28c2.394 1.362 4.94 2.438 7.655 3.187L37 86h12l3-10.437c2.715-.75 5.26-1.825 7.656-3.188l9.5 5.28 8.5-8.5-5.28-9.5c1.362-2.394 2.438-4.94 3.187-7.655L86 49V37l-10.437-3c-.75-2.715-1.825-5.26-3.188-7.656l5.28-9.5-8.5-8.5-9.5 5.28c-2.394-1.362-4.94-2.438-7.655-3.186L49 0H37zm6 23c11.046 0 20 8.954 20 20s-8.954 20-20 20-20-8.954-20-20 8.954-20 20-20z"/></svg>
+                .dropdown--menu.c--bg-gray-darker.l--pad-s.l--rounded-corners
+                    .dropdown--menu-item
+                        label(for="imageUrl")
+                            | Image URL
+                            input(type="text" name="imageUrl").device--url
+                    .dropdown--menu-item
+                        label(for="device").form--select
+                            | Device
+                            select(name="device").device--selector
+                    .dropdown--menu-item
+                        input(type="text" name="shortUrl").visually-hidden.dropdown--url
+                        button.button.dropdown--shorten Shorten URL
+            
+        article 
+            .device
+                .device--screen
+                    img(src="").device--screen-image

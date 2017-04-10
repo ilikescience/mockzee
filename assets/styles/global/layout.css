@@ -140,6 +140,8 @@
     .l--hidden-at-s { display: none; }
 }
 
+.l--rounded-corners { border-radius: var(--l--border-radius); }
+
 .l--pad-l { padding: var(--l--space-l); }
 .l--pad-m { padding: var(--l--space-m); }
 .l--pad-s { padding: var(--l--space-s); }

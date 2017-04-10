@@ -1,0 +1,15 @@
+.device {
+    position: relative;
+    flex: 1 0 auto;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.device--screen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: color(var(--c--blue) a(30%));
+    overflow-y: auto;
+}

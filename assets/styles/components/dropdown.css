@@ -1,0 +1,45 @@
+.dropdown--icon {
+    width: 2rem;
+    height: 2rem;
+    padding: 0.25rem;
+    fill: var(--c--gray-dark);
+
+    &:hover {
+        background: var(--c--gray-darker);
+        cursor: pointer;
+    }
+}
+
+.dropdown {
+    position: relative;
+
+    &.is-active .dropdown--icon {
+        background: var(--c--gray-darker);
+    }
+
+    &.is-active .dropdown--menu {
+        display: block;
+    }
+}
+
+.dropdown--menu {
+    display: none;
+    position: absolute;
+    right: 0;
+    width: 20rem;
+    z-index: var(--l--z-high);
+}
+
+.dropdown--url {
+    height: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    overflow: hidden;
+}
+
+.dropdown--shorten {
+    display: block;
+    width: 100%;
+    margin-top: 1rem;
+}

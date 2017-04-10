@@ -8,3 +8,33 @@ html {
 *::after {
     box-sizing: inherit;
 }
+
+body {
+    color: var(--c--white);
+    background: var(--c--black);
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+    padding: 1rem;
+    flex-direction: column;
+}
+
+header {
+    display: flex;
+    flex: 0 1 auto;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.header--logo {
+    width: 2rem;
+    height: 2rem;
+    fill: var(--c--gray-dark);
+}
+
+article {
+    display: flex;
+    flex: 1 0 auto;
+}
