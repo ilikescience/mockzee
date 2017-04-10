@@ -12,4 +12,8 @@
     left: 0;
     background: color(var(--c--blue) a(30%));
     overflow-y: auto;
+
+    & img {
+        display: block;
+    }
 }
