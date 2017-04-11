@@ -238,7 +238,6 @@ const bindFormEvents = () => {
 
 const dropdownHandler = () => {
     const dropdown = document.querySelector('.dropdown');
-    console.log('hi');
     dropdown.classList = (
         dropdown.classList.contains('is-active') ? 'dropdown' : 'dropdown is-active'
     );
